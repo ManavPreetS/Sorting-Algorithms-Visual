@@ -152,14 +152,14 @@ async function bubbleSort(){
             if (array[j] > array[j + 1]) {
                 box[j].style.border= "3px solid red";
                 box[j + 1].style.border= "3px solid red";
-                await sleep(speed.max-speed.value);
+                await sleep((speed.max-speed.value)*2);
                 let temp = array[j];
                 array[j] = array[j + 1];
                 array[j + 1] = temp;
                 let tmp = box[j].innerHTML;
                 box[j].innerHTML = box[j+1].innerHTML;
                 box[j + 1].innerHTML = tmp;
-               await sleep(speed.max-speed.value);
+               await sleep((speed.max-speed.value)*2);
                box[j].style.border= "3px solid black";
                box[j + 1].style.border= "3px solid black";
             }
@@ -211,7 +211,7 @@ async function insertionSort(a) {
         let currv = box[i].innerHTML;
         let j
         box[i].style.border= "3px solid red";
-        await sleep(speed.max-speed.value)
+        await sleep((speed.max-speed.value)*2)
         for (j = i - 1; j >= 0 && arr[j] > currentValue; j--) {
           arr[j + 1] = arr[j]
           box[j + 1].innerHTML = box[j].innerHTML;
@@ -241,7 +241,7 @@ async function insertionSort(a) {
          if (smallest != i) {
           bar[i].style.backgroundColor="red"
           bar[smallest].style.backgroundColor="red"
-          await sleep(speed.max-speed.value)
+          await sleep((speed.max-speed.value))
              let temp_val = input_Array[i];
              let temp = bar[i].style.height
              let temps = bar[i].innerHTML
@@ -250,9 +250,10 @@ async function insertionSort(a) {
              bar[i].style.height= bar[smallest].style.height
              input_Array[smallest] = temp_val;
              bar[smallest].innerHTML= temps;  
-             bar[smallest].style.height= temp;   
+             bar[smallest].style.height= temp; 
+             await sleep((speed.max-speed.value))  
              bar[i].style.backgroundColor="#2a61c2"
-             bar[smallest].style.backgroundColor="#2a61c2"   
+             bar[smallest].style.backgroundColor="#adc4ed"   
         }
 
     }
@@ -273,7 +274,7 @@ async function insertionSort(a) {
           box[i].style.border= "3px solid red";
           console.log()
           box[smallest].style.border= "3px solid red";
-          await sleep(speed.max-speed.value)
+          await sleep((speed.max-speed.value)*2)
              let temp_val = input_Array[i];
              let temp = box[i].innerHTML
              input_Array[i] = input_Array[smallest];
