@@ -138,8 +138,8 @@ async function bubbleSort(){
                 bar[j + 1].style.height = tmp;
                 bar[j + 1].innerHTML = tmps;
                await sleep(speed.max-speed.value);
-               bar[j].style.backgroundColor = "black";
-               bar[j + 1].style.backgroundColor = "black";
+               bar[j].style.backgroundColor = "#2a61c2";
+               bar[j + 1].style.backgroundColor = "#2a61c2";
             }
         }
         for(let f=0;f<bar.length;f++){
@@ -192,16 +192,20 @@ async function insertionSort(a) {
         arr[j + 1] = arr[j]
         bar[j + 1].innerHTML = bar[j].innerHTML;
         bar[j + 1].style.height = bar[j].style.height;
-        bar[j + 1].style.backgroundColor = "black";
+        bar[j + 1].style.backgroundColor = "#2a61c2";
       }
       bar[j+1].innerHTML=currvs
       arr[j + 1] = currentValue
       bar[j+1].style.height=currv
       bar[j+1].style.backgroundColor="red"
       await sleep(speed.max-speed.value)
-      bar[j+1].style.backgroundColor="black"
+      bar[j+1].style.backgroundColor="#2a61c2"
 
-    }}else{
+    }
+    for(let f=0;f<bar.length;f++){
+      bar[f].style.backgroundColor="#adc4ed"
+    }
+  }else{
       for (let i = 1; i < box.length; i++) {
         let currentValue = arr[i]
         let currv = box[i].innerHTML;
@@ -247,8 +251,8 @@ async function insertionSort(a) {
              input_Array[smallest] = temp_val;
              bar[smallest].innerHTML= temps;  
              bar[smallest].style.height= temp;   
-             bar[i].style.backgroundColor="black"
-             bar[smallest].style.backgroundColor="black"   
+             bar[i].style.backgroundColor="#2a61c2"
+             bar[smallest].style.backgroundColor="#2a61c2"   
         }
 
     }
