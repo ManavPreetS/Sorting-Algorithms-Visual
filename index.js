@@ -15,11 +15,11 @@ numbers.addEventListener("change",numebersischecked)
 var totallength = 5;
 
 slider.oninput = function(){
-  if(bars.checked==true){
+  if(bars.checked==true && unsortedArray[0]!=null){
 totallength = Math.floor(slider.value/10)+5
 randomize()
 }
-else{
+else if (numbers.checked==true && unsortedArray[0]!=null){
 totallength = Math.floor(slider.value/(30))+5
 console.log(totallength)
 randomize()
@@ -44,12 +44,12 @@ function sleep(ms) {
 function randomize(){
 let bar = document.getElementsByClassName("bar")
 let box = document.getElementsByClassName("box")
-if(bars.checked==true)
+if(bars.checked==true){
 for(let i =bar.length; i<totallength;i++){
     unsortedArray[i]=Math.floor((Math.random() * (max - min + 1) + min))
     console.log("HEY")
-    console.log(totallength)
-}else{
+    console.log(totallength)}
+}else if (numbers.checked==true){
   for(let i =box.length; i<totallength;i++){
     unsortedArray[i]=Math.floor((Math.random() * (max - min + 1) + min))
 }
@@ -58,12 +58,14 @@ renderbars(unsortedArray)
 }
 
 function randomizer(){
-  if(bars.checked==true)
+  if(bars.checked==true){
+  totallength = Math.floor(slider.value/10)+5
   for(let i =0; i<totallength;i++){
       unsortedArray[i]=Math.floor((Math.random() * (max - min + 1) + min))
       console.log("HEY")
-      console.log(totallength)
+      console.log(totallength)}
   }else{
+    totallength = Math.floor(slider.value/(30))+5
     for(let i =0; i<totallength;i++){
       unsortedArray[i]=Math.floor((Math.random() * (max - min + 1) + min))
   }
